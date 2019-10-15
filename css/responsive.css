@@ -1,0 +1,25 @@
+@media screen and (max-width: 769px) {
+.mainbox-1 {width: 100%;}
+.mainbox-2 {padding: 0px 8px 0px 8px !important; width: 100%;}
+.transactionbox {height: auto;}
+.row-box.height3 {height: auto;}
+.buybox {padding-right: 0px;}
+.pr4 {padding-right: 0px !important; margin-bottom: 8px;}
+.vol.scroll {height: auto;}
+.accounts label{padding:0px;}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {background-color: #97c32c;}
+.navbar-default .navbar-toggle {border-color: #97c32c;}
+.navbar-default .navbar-toggle .icon-bar {background-color: #ffffff;}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {border-color: #97c32c;}
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {max-height: inherit;} 
+.navbar-nav > li > .dropdown-menu li {background: #0c171d;}
+.company-name{text-align: center; float: initial;}
+.footer-right-sec {text-align: center;}
+.footernav {text-align: center;}
+.row .no-float{display: inline-block;  width:100% !important;}
+.toggle{left: 150px !important;}
+} 
+@media screen and(max-width: 400px) {
+.toggle{left: 150px !important;}	
+}

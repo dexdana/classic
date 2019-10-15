@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.bitcratic.com/api.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Oct 2019 14:23:32 GMT -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="images/favicon.html" rel="icon" />
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/font-awesome.min.css" rel="stylesheet" />
+<link href="css/responsive.css" rel="stylesheet" id="stylesheet" />
+<title>BitCratic</title>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<meta name="google-site-verification" content="kr0aLgO-nKOiccYPr8X0MOERaJcuHOsj47Km4cbN0lQ" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-97824095-9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-97824095-9');
+</script>
+<style>
+html, body {
+	background: #e8e8e8;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+.contentmain a{color: #2196F3;}
+.contentmain hr{margin-top: 10px;}
+.contentmain strong{font-weight: 600; font-size: 18px; line-height: 35px;}
+#innerpage {
+	margin: 30px auto 0px;
+	max-width: 1170px;
+	width: 100%;
+}
+.contentrow {
+	margin-top: 5px;
+}
+.contentmain {
+	padding: 15px;
+}
+.contbox {
+	background: #fff;
+	padding: 0px;
+	margin-bottom: 25px;
+    box-shadow: 1px 1px 5px #ccc;
+}
+.contbox p {
+	color: #0e0e0e;
+}
+.contbox h1, .contbox h2 {
+	font-size: 22px;
+	margin: 0px 0px 0px 0px;
+	background: #22323c;
+	padding: 10px;
+	color: #fff;
+}
+.contbox p {
+	font-size: 14px;
+	line-height: 22px;
+	color: #0e0e0e;
+}
+.right {
+	float: right;
+	margin: 15px;
+}
+.right a {
+	color: #fff;
+}
+.subtitle {
+	font-size: 18px;
+	color: #f56800;
+	margin-bottom: 5px;
+}
+#innerpage ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#innerpage ul li {
+	font-size: 14px;
+	color: #000;
+	line-height: 24px;
+	border-bottom: 1px dashed #dedede;
+	padding: 4px 0px;
+}
+#innerpage ul li:before {
+	font-family: fontawesome;
+	content: "\f111";
+	color:#626565;
+	font-size: 8px;
+	padding-right: 10px;
+	vertical-align: top;
+}
+#innerpage table {
+	max-width: 500px;
+	width: 100%;
+	font-size: 14px;
+	margin-bottom: 15px;
+	margin-top: 17px;
+}
+#innerpage table td, th {
+	color: #000;
+	padding: 10px;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+#innerpage table tbody>tr:nth-child(odd)>th {
+	background-color: #f9f9f9;
+}
+footer a{ color:#fff;    padding: 0px 1px;}
+footer {background: #252b2f; padding: 13px 0px 8px; border-top: 1px solid #040e15;}
+.company-name { color: #fff;  text-align: left; float:right; font-size:14px; margin-bottom: 0; line-height: 25px;}
+a:focus, a:hover {color: #8ac300; text-decoration: none;}
+.navbar.navbar-default {
+	background: #2f3d45;
+	border: 0;
+	border-radius: 0;
+}
+a.navbar-brand {
+	height: 50px;
+	padding: 0;
+}
+
+.navbar-brand img {
+	padding: 12px;
+	width: 90%;
+}
+</style>
+</head>
+<body class="innerpagebg">
+<nav class="navbar navbar-default navbar-expand-lg"> <a class="navbar-brand" href="index.html"> <img src="images/title.png" /> </a>
+  <div class="right"><a href="index.html"><i class="fa fa-arrow-left"></i> Go back to Home</a></div>
+</nav>
+<div id="innerpage" class="container">
+  <div class="row contentrow">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contbox">
+      <h1>Bitcratic API</h1>
+      <div class="contentmain">
+        <p>Bitcratic's API gives you access to ticker information, orders, trades, deposits, withdrawals, and anything else available through our website. You can also interact directly with the smart contract to get trades, deposits, and withdrawals. For an example of directly working with the contract, take a look at our <a href="https://github.com/bitcratic/backend-replacement/blob/master/app/services/contract_observer.py">contract_observer.py</a>. Bitcratic's orderbook is primarily stored offchain, but can be accessed with our public interface or through this API. To learn more about our order system, take a look at our <a href="https://github.com/bitcratic/backend-replacement">backend repository</a>.</p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contbox">
+      <h2>Websocket Server</h2>
+      <div class="contentmain">
+        <p>Bitcratic's API is socket.io based. The API utilizes SSL on all connections to keep your data private.
+          You can connect to Bitcratic's API through this endpoint:</p>
+        <ul>
+          <li><a href="https://bitcratic.org/" rel="nofollow">https://bitcratic.org</a></li>
+          <li><a href="https://bitcratic.org/returnTicker" rel="nofollow">https://bitcratic.org/returnTicker</a></li>
+        </ul>
+        <h3>Rate Limiting</h3>
+        <hr>
+        <p>Please try to limit your calls to the API to a reasonable frequency.</p>
+        <p>The API currently limits clients to 6 concurrent connections and 12 reconnects per minute per IP address. We reserve the right to adjust these without advanced notice.</p>
+        <p>The API does not limit the number of <code>GetMarket</code> and <code>order</code> messages the client can send at this time.</p>
+        <p>Clients that violate rate limits repeatedly may be blocked.</p>
+        <h3>Best Practices</h3>
+        <hr>
+        <strong>Identify your client</strong>
+        <p>Make sure to set a custom User Agent for your Bitcratic API client whenever possible. The User Agent string should include the name and version of the client, as well as the client's homepage URL </p>
+        <p>A custom User Agent string will allow us to reach out to you in case of any issues and will help us debug issues if you reach out for support.</p>
+        <strong>Backoff on errors</strong>
+        <p>If you receive a one-off disconnect from the server, you may reconnect right away. However, if you receive multiple disconnects or receive errors when attempting to connect (HTTP statuses &gt;=400), you must delay your next connection attempt. We recommend randomized <a href="https://en.wikipedia.org/wiki/Exponential_backoff" rel="nofollow">exponential backoff</a> strategy: <code>retry_delay = min(((2^n)+random_number_milliseconds), 128)</code>, where <code>n</code> is the retry attempt count, starting at 0.</p>
+        <h3>Requests</h3>
+        <hr>
+        <p>There are two messages you can send to the Bitcratic websocket API:</p>
+        <ol>
+          <li>GetMarket</li>
+          <li>Message</li>
+        </ol>
+        <h4>1) GetMarket ( token, user )</h4>
+        <p><strong>GetMarket</strong> accepts two optional parameters: token &amp; user.</p>
+        <ul>
+          <li><code>Token</code> is the Ethereum address for the token you wish to receive data on.</li>
+          <li><code>User</code> is the Ethereum wallet address for the user you wish to receive data on.</li>
+        </ul>
+        <p>When <code>getMarket</code> is emitted, a <code>market</code> response will be returned.</p>
+        <p>The <strong>market</strong> response can consist of 6 different parts:</p>
+        <strong>ReturnTicker</strong>
+        <p>This is standard <code>returnTicker</code> information including volume and price data.</p>
+        <p>Example <code>returnTicker</code>:</p>
+        <pre><code>{  
+   "ETH_0x1183f92":{  
+      "tokenAddr":"0x1183f92a5624d68e85ffb9170f16bf0443b4c242",
+      "quoteVolume":"0",
+      "baseVolume":"0",
+      "last":"0.0006200000002",
+      "bid":"0.00062",
+      "ask":"0.001428",
+      "updated":"2018-02-21T17:26:11.686344"
+   },
+   "ETH_0x11f8dd7":{  
+      "tokenAddr":"0x11f8dd7699147566cf193596083d45c8f592c4ba",
+[...]
+</code></pre>
+        <p>If you would like to get data on each ticker including names, please take a look at our <a href="https://github.com/bitcratic/tokenbase">tokenbase repository</a>. If you would just like a simple way to access ticker symbols, take a look at our <a href="https://bitcratic.com/config/main.json" rel="nofollow">configuration JSON</a>.</p>
+        <p>We also supply a REST version of this data, but highly recommend using the websocket server for the most up to date information. The REST version can be found here: <a href="https://bitcratic.org/returnTicker" rel="nofollow">https://bitcratic.org/returnTicker</a></p>
+        <strong>Trades | myTrades</strong>
+        <p>If <code>user</code> is passed in, <code>myTrades</code> will contain all trades available for the passed in user's address.
+          If <code>user</code> is not passed in, <code>myTrades</code> will be absent.</p>
+        <p>Example <code>trades</code> | <code>myTrades</code>:</p>
+        <pre><code>[
+  { txHash: '0x75f083bf7a47861dcbb86b30b359de761e57d648c48b5084af7ef3f5db887557',
+    date: '2017-10-23T01:16:53.000Z',
+    price: '0.219011',
+    side: 'sell',
+    amount: '70.2',
+    amountBase: '15.3745722',
+    buyer: '0xfe988cd30fa97f5422f5a4ae50eafa6271cd2417',
+    seller: '0x2056c8184da1fd5a7a1cf43b567c82a999962ef4',
+    tokenAddr: '0x8f3470a7388c05ee4e7af3d01d8c722b0ff52374' },
+  ...
+]
+</code></pre>
+        <strong>Orders | myOrders</strong>
+        <p>If <code>user</code> is passed in, <code>myOrders</code> will contain all orders available for the passed in user's address.
+          If <code>user</code> is not passed in, <code>myOrders</code> will be absent.</p>
+        <p>Example <code>orders</code> | <code>myOrders</code>:</p>
+        <pre><code>{
+  sells: [
+    { id: '1337b7fe3f96996904d1299fcf030501661158cb964ae6400cbda2ae107978fb_sell',
+      user: '0xfb83cB20DFcf7643AbE43Ea23b77F04573eC9616',
+      state: '',
+      amount: '-2000000000000000000',
+      price: '0.9',
+      tokenGet: '0x0000000000000000000000000000000000000000',
+      amountGet: '1800000000000000000',
+      tokenGive: '0x8f3470a7388c05ee4e7af3d01d8c722b0ff52374',
+      amountGive: '2000000000000000000',
+      expires: '5143967',
+      nonce: '893205913',
+      v: 28,
+      r: '0x4eb35ba40288a169e5f5dfe85a8582db762fde5d57b212afd0be6438ca186f40',
+      s: '0x6fc37f071c75c562074b536a354bc79ba3a066f918243fc29813e9a4426b5fa9',
+      date: '2017-09-16T11:56:47.006Z',
+      updated: '2017-09-16T11:56:47.006Z',
+      availableVolume: '1999403702773222212.22222222222222222222',
+      ethAvailableVolume: '1.999403702773222',
+      availableVolumeBase: '1799463332495900000',
+      ethAvailableVolumeBase: '1.7994633324959',
+      amountFilled: '0' },
+    ...
+  ],
+  buys: [
+    { id: '2c002b763a9aba6d51dbf7274676f7ce957a060bd340b6230aa707fd5ca358a8_buy',
+      user: '0xd270fDc1b2a369f890E9858F09E3D0769B63b526',
+      state: '',
+      amount: '10000000000000000000',
+      price: '0.06',
+      tokenGet: '0x8f3470a7388c05ee4e7af3d01d8c722b0ff52374',
+      amountGet: '10000000000000000000',
+      tokenGive: '0x0000000000000000000000000000000000000000',
+      amountGive: '600000000000000000',
+      expires: '1003884633',
+      nonce: '1928222541',
+      v: 28,
+      r: '0x236d8b8f87163b6dc6712cb90ac85be8eb9fd80d6d671013d8414206d33da1d9',
+      s: '0x6813055d05f5300cd45a43ef5e592f78bdc9698e548f3bfb49fc355f327fc92b',
+      date: '2017-09-16T11:56:47.006Z',
+      updated: '2017-09-13T14:56:28.838Z',
+      availableVolume: '10000000000000000000',
+      ethAvailableVolume: '10',
+      availableVolumeBase: '600000000000000000',
+      ethAvailableVolumeBase: '0.6',
+      amountFilled: '0' },
+    ...
+  ]
+}
+</code></pre>
+        <strong>myFunds</strong>
+        <p>If <code>user</code> is passed in, <code>myFunds</code> will contain deposits and withdrawals for the passed in user's address.
+          If <code>user</code> is not passed in, <code>myFunds</code> will be absent.</p>
+        <p>Example <code>myFunds</code>:</p>
+        <pre><code>[
+  { txHash: '0x295f173773f31c852a9c3eef252f8600620147c6aabb312276f8b0d9800cbc7a',
+      date: '2017-10-17T17:36:41.000Z',
+      tokenAddr: '0x0000000000000000000000000000000000000000',
+      kind: 'Deposit',
+      user: '0xcdb1978195f0f6694d0fc4c5770660f12aad65c3',
+      amount: '0.001',
+      balance: '0.005688612160935313' },
+  ...
+]
+</code></pre>
+        <h4>2) Message ( order )</h4>
+        <p><code>message</code> allows you to post an order directly to Bitcratic and accepts one required parameter.</p>
+        <p><code>order</code> must be a properly formatted JSON object containing the following properties:</p>
+        <ul>
+          <li><code>amountGive</code>: the amount you want to give (in wei or the base unit of the token)</li>
+          <li><code>tokenGive</code>: the token you want to give (use the zero address, 0x0000000000000000000000000000000000000000 for ETH)</li>
+          <li><code>amountGet</code>: the amount you want to get (in wei or the base unit of the token)</li>
+          <li><code>tokenGet</code>: the token you want to get (use the zero address, 0x0000000000000000000000000000000000000000 for ETH)</li>
+          <li><code>contractAddr</code>: the smart contract address</li>
+          <li><code>expires</code>: the block number when the order should expire</li>
+          <li><code>nonce</code>: a random number</li>
+          <li><code>user</code>: the address of the user placing the order</li>
+          <li><code>v</code>, <code>r</code>, <code>s</code>: the signature of sha256(contractAddr, tokenGet, amountGet, tokenGive, amountGive, expires, nonce) after being signed by the user</li>
+        </ul>
+        <p>On error, emits a <code>messageResult</code> event to the originating sid with an array payload, containing:</p>
+        <ol>
+          <li>Error code:
+            <ul>
+              <li><code>400</code> if the event payload could not be interpreted due to client error (cf. <a href="https://httpstatuses.com/400" rel="nofollow">https://httpstatuses.com/400</a>)</li>
+              <li><code>422</code> if the event payload contained semantic errors (cf. <a href="https://httpstatuses.com/422" rel="nofollow">https://httpstatuses.com/422</a>)</li>
+            </ul>
+          </li>
+          <li>A string error message with a brief description of the problem.</li>
+          <li>An object containing some useful details for debugging.</li>
+        </ol>
+        <p>Example error result:</p>
+        <pre><code>[
+	422,
+	"Cannot post order because it has already expired",
+	{ "blockNumber": 5131620, "expires": 5131666, "date": 2017-10-17T17:36:41.000Z }
+]
+</code></pre>
+        <p>On success, emits a <code>messageResult</code> event to the originating sid with an array payload, containing:</p>
+        <ol>
+          <li>Success code <code>202</code>: the order has been accepted.</li>
+          <li>A brief message confirming success</li>
+        </ol>
+        <p>Example success result: <code>[202, "Good job!"]</code></p>
+        <h4>Events</h4>
+        <hr>
+        <strong>Orders</strong>
+        <p>New orders will be emitted as they are placed. The data structure of this orders event mirrors that of market.orders outlined above. However, some orders will have a deleted flag. Orders with the deleted flag have been cancelled or traded and are no longer valid.</p>
+        <strong>Trades</strong>
+        <p>New trades will be emitted as they occur. The data structure of this trades event mirrors that of market.trades outlined above.</p>
+        <strong>Funds</strong>
+        <p>New deposits and withdrawals will be emitted as they occur. The data structure of this <code>funds</code> event mirrors that of <code>market.myFunds</code> outlined above.</p>
+        
+
+      
+      </div>
+      
+      
+    
+      
+    </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contbox">
+      <h1>API Client Libraries</h1>
+      <div class="contentmain">
+         <p>Below is a (possibly incomplete) list of third-party libraries that can help you work with Bitcratic API:</p>
+        <p>These are third-party libraries; as such, Bitcratic has no control over them and offers no support for them. You should review their source code to make sure they are bug-free, safe, secure, and fit for your use.</p>
+        <p>If you would like to add your library to this list, let us know by opening an issue.</p>
+      </div>
+    </div>
+    
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contbox">
+      <h1>More Information</h1>
+      <div class="contentmain">
+         <p>Below is a (possibly incomplete) list of third-party libraries that can help you work with Bitcratic API:</p>
+          <p>For more information, or to see how this websocket server works, take a look at <a href="https://github.com/bitcratic/backend-replacement/blob/master/app/services/websocket_server.py">websocket_server.py</a></p>
+        <p>Special thanks to Zack for his original API and documentation: <a href="https://github.com/etherdelta/etherdelta.github.io/blob/master/docs/API.md">https://github.com/etherdelta/etherdelta.github.io/blob/master/docs/API.md</a></p>
+      </div>
+    </div>
+    
+  </div>
+</div>
+</div>
+<script type='text/javascript' src='../ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js'></script>
+<footer>
+  <div class="container-fluid">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 footer-right-sec">
+       <p class="company-name">© 2018 <a href="https://www.analyzedmedia.com/">Analyzed Media Pvt Ltd</a></p>
+        <a class="home" href="index.html">Home</a>
+        <a>|</a>
+        <a href="system-status.html">System Status</a>
+        <a>|</a>
+        <a href="tokensale.html">Token Sale</a>
+         <a>|</a>
+        <a href="announcement.html">Announcement</a>
+         <a>|</a>
+		<a href="guides.html">About us</a>
+         <a>|</a>
+        <a href="guides.html">User Guide </a>
+         <a>|</a>
+        <a href="guides.html">Fees</a>
+         <a>|</a>
+        <a href="listyourtoken.html">List your Token</a>
+        <a>|</a>
+        <a href="api.html">API</a>
+        <a>|</a>
+        <a href="bct-token.html">BCT Token</a>
+        <a>|</a> 
+        <a href="media.html">Media</a>  
+    </div>
+  </div>
+</footer>
+</body>
+
+<!-- Mirrored from www.bitcratic.com/api.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Oct 2019 14:23:32 GMT -->
+</html>

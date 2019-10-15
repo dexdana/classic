@@ -1,0 +1,83 @@
+body.day{background:#96aecc;}
+body.day .content h1, body.day .content p{color: #000;}
+.toggle{position:absolute;	top:13px; left:275px;background:#fff;border: 2px solid #00151f;width:50px;height:24px;	cursor:pointer; border-radius: 20px;transition: 0.5s;}
+.toggle.active {background: #1e2b34; border: 2px solid #ffffff;}
+.toggle:before{content:''; position:absolute; top:2px; left:3px;width: 16px;height: 16px;background:#7dbb2b; border-radius: 50%;transition: 0.5s;}
+.toggle.active:before{left: 27px;background:#f7614e;}
+
+body.day .navbar.navbar-default {background: #214d84;}
+body.day .row-header{background: #ffffff; color:#265794; font-weight: bold;}
+body.day .nav-tabs.columns > li > a{background:#d2e1f3; color: #000; border-right: 1px solid #90a9c7; border-top: 1px solid #90a9c7;}
+body.day .nav-tabs.columns > li:last-child a{ border-right:0px solid #c1c1c1;}
+body.day .nav-tabs.columns > li.active > a{color: #fff; background:#265794;}
+body.day .nav-tabs.columns > li > a:hover{background:#265794 !important; color: #fff;}
+body.day .row-box.nav-header{border-bottom:1px solid #919ead;}
+body.day .table>tbody>tr>td a {color: #000 !important;}
+body.day .row-box {color: #000;}
+body.day  #balance, body.day  #volume, body.day  #trades, body.day  #buy, body.day  #sell, body.day  #orders, body.day  .borderBX {background: #ffffff;}
+body.day #chartPrice {background: #ffffff !important;}
+body.day .form-control, body.day .form-control[disabled], body.day .form-control[readonly], body.day fieldset[disabled], body.day .form-control{background-color: #f0f5fb;border: 1px solid #9ab5d8; color: #949494;}
+body.day .form-control[readonly]{background-color:#f0f5fb;}
+body.day .volumebox input {background:#f0f5fb; border:0px solid #f3f3f3;border-right: 6px solid #265794;}
+body.day #volume_ETH .ticker-row {border-bottom: 1px solid #c4d1e2;}
+body.day .row-header{border-bottom: 1px solid #265794;}
+body.day .nav-tabs.columns > li > a{border-top:0px solid #ececec !important;}
+body.day tr.mid-header{background:#d2e1f3; border-bottom: 1px solid #e4e4e4 !important; border-top: 1px solid #e4e4e4 !important;}
+body.day tr.table-header{border-bottom: 1px solid #265794;}
+body.day .trade table tbody tr {border-bottom: 1px solid #c0d4e8 !important;}
+body.day #orders table tbody tr {border-bottom: 1px solid #d6dfea !important;}
+body.day .transaction .nav-header {background:#d2e1f3;}
+body.day .transaction .table-condensed {background:#dde9f7;}
+body.day .transaction .table-header th{border-bottom: 1px solid #bacce2; color: #2b2b2b;}
+body.day .transaction .table tbody tr td {color:#08499a; background: #fff;}
+body.day #trades tr:hover {background-color:#f9fcff;}
+body.day .nav-tabs .active {border-top:0px solid #07a461 !important;}
+body.day .scroll::-webkit-scrollbar-track {background:#265794;}
+body.day footer {background:#1a3d69;border-top: 1px solid #09192d; padding:3px 0px 2px;}
+body.day .nav-tabs>li>a{line-height:10px;}
+body.day .table {margin-top:0px;}
+body.day #volume .ticker-row:hover {background-color:#f2f8ff;}
+body.day .ticker-row div:nth-child(2){color:#000 !important;} 
+body.day .modal-content {color: #272727; background: #ffffff;}
+body.day blockquote footer {background: #e2e2e2; border-top:1px solid #e2e2e2;}
+body.day .modal-header{border-bottom: 2px solid #e2e2e2;}
+body.day .modal-header .close {color: #000;}
+body.day .modal-header{border-radius: 4px;}
+body.day tr.clickable-row:hover {background:#f5faff;}
+body.day blockquote{ font-size:14px;}
+body.day .form-horizontal .control-label{color:#000;}
+body.day .row-box.nav-header {height:33px;}
+body.day .buy {color: #00c708; }
+body.day .sell {color: #f00; font-weight: 600;}
+body.day #chartPrice text[fill]{color:#000 !important; fill:#000 !important;} 
+body.day #chartPrice rect[fill]{color:#37639a !important; fill:#698ab3 !important;}
+body.day clip-path g rect[fill]{color:#000 !important; fill:#FFF !important;}
+body.day .buybox .row-header{background:#265794; color: #fff;}
+body.day .buytkn .row-header{background:#265794; color: #fff;}
+body.day .btn-success{background-color: #62ad00 !important;}
+body.day .btn-danger{background-color: #e03600 !important;}
+body.day footer a:focus, a:hover {color: #a2d419;}
+body.day .volumebox input {background: url(../images/search-icon2.png) no-repeat right;}
+body.day  #chartDepth {overflow: hidden; background: #265794 !important;}
+body.day .toggle.active {background: #214d84;}
+body.day #tokensDropdown .dropdown-toggle{border: 1px solid #d2e1f3 !important;}
+
+
+
+body.day footer .footer-right-sec ul li a{line-height: 30px; font-size: 15px;}
+body.day .fa-external-link{color: #4a4a4a;}
+body.day .trade table tr:nth-child(2n+0){background:#f9fcff;}
+body::-webkit-scrollbar{width:10px !important;}
+
+
+
+.tredingcmpt a:focus{color: #ffffff !important; background: #629e13;}
+.tredingcmpt a {color: #ffffff !important; background: #629e13; font-size: 14px !important; line-height: 10px !important; padding: 6px 8px !important;order-radius: 4px; margin-top:9px; margin-right: 4px; border-radius: 4px;}
+.tredingcmpt a:hover{background:#589409 !important; color:#fff!important}
+
+
+.bsorder {position: absolute; z-index: 9999; top:4px; font-size:15px; right: 8px; color: #8fff00;}
+.announcement a{color:#eab823 !important;}
+.buyselldisable{pointer-events: none; opacity: 0.5; cursor: not-allowed !important; pointer-events: none; position:relative;}
+
+
