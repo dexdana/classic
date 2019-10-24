@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from www.bitcratic.com/api.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Oct 2019 14:23:32 GMT -->
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,7 +8,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 <link href="css/font-awesome.min.css" rel="stylesheet" />
 <link href="css/responsive.css" rel="stylesheet" id="stylesheet" />
-<title>BitCratic</title>
+<title>Dexdana</title>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <meta name="google-site-verification" content="kr0aLgO-nKOiccYPr8X0MOERaJcuHOsj47Km4cbN0lQ" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97824095-9"></script>
@@ -138,19 +136,19 @@ a.navbar-brand {
 <div id="innerpage" class="container">
   <div class="row contentrow">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contbox">
-      <h1>Bitcratic API</h1>
+      <h1>Dexdana API</h1>
       <div class="contentmain">
-        <p>Bitcratic's API gives you access to ticker information, orders, trades, deposits, withdrawals, and anything else available through our website. You can also interact directly with the smart contract to get trades, deposits, and withdrawals. For an example of directly working with the contract, take a look at our <a href="https://github.com/bitcratic/backend-replacement/blob/master/app/services/contract_observer.py">contract_observer.py</a>. Bitcratic's orderbook is primarily stored offchain, but can be accessed with our public interface or through this API. To learn more about our order system, take a look at our <a href="https://github.com/bitcratic/backend-replacement">backend repository</a>.</p>
+        <p>Dexdana's API gives you access to ticker information, orders, trades, deposits, withdrawals, and anything else available through our website. You can also interact directly with the smart contract to get trades, deposits, and withdrawals. For an example of directly working with the contract, take a look at our <a href="https://github.com/dxdana/backend-replacement/blob/master/app/services/contract_observer.py">contract_observer.py</a>. Dexdana's orderbook is primarily stored offchain, but can be accessed with our public interface or through this API. To learn more about our order system, take a look at our <a href="https://github.com/Dexdana/backend-replacement">backend repository</a>.</p>
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contbox">
       <h2>Websocket Server</h2>
       <div class="contentmain">
-        <p>Bitcratic's API is socket.io based. The API utilizes SSL on all connections to keep your data private.
-          You can connect to Bitcratic's API through this endpoint:</p>
+        <p>Dexdana's API is socket.io based. The API utilizes SSL on all connections to keep your data private.
+          You can connect to Dexdana's API through this endpoint:</p>
         <ul>
-          <li><a href="https://bitcratic.org/" rel="nofollow">https://bitcratic.org</a></li>
-          <li><a href="https://bitcratic.org/returnTicker" rel="nofollow">https://bitcratic.org/returnTicker</a></li>
+          <li><a href="https://dexdana.tech/" rel="nofollow">https://dexdana.tech</a></li>
+          <li><a href="https://dexdana.tech/returnTicker" rel="nofollow">https://dexdaba.tech/returnTicker</a></li>
         </ul>
         <h3>Rate Limiting</h3>
         <hr>
@@ -161,13 +159,13 @@ a.navbar-brand {
         <h3>Best Practices</h3>
         <hr>
         <strong>Identify your client</strong>
-        <p>Make sure to set a custom User Agent for your Bitcratic API client whenever possible. The User Agent string should include the name and version of the client, as well as the client's homepage URL </p>
+        <p>Make sure to set a custom User Agent for your Dexdana API client whenever possible. The User Agent string should include the name and version of the client, as well as the client's homepage URL </p>
         <p>A custom User Agent string will allow us to reach out to you in case of any issues and will help us debug issues if you reach out for support.</p>
         <strong>Backoff on errors</strong>
         <p>If you receive a one-off disconnect from the server, you may reconnect right away. However, if you receive multiple disconnects or receive errors when attempting to connect (HTTP statuses &gt;=400), you must delay your next connection attempt. We recommend randomized <a href="https://en.wikipedia.org/wiki/Exponential_backoff" rel="nofollow">exponential backoff</a> strategy: <code>retry_delay = min(((2^n)+random_number_milliseconds), 128)</code>, where <code>n</code> is the retry attempt count, starting at 0.</p>
         <h3>Requests</h3>
         <hr>
-        <p>There are two messages you can send to the Bitcratic websocket API:</p>
+        <p>There are two messages you can send to the Dexdana websocket API:</p>
         <ol>
           <li>GetMarket</li>
           <li>Message</li>
@@ -197,8 +195,8 @@ a.navbar-brand {
       "tokenAddr":"0x11f8dd7699147566cf193596083d45c8f592c4ba",
 [...]
 </code></pre>
-        <p>If you would like to get data on each ticker including names, please take a look at our <a href="https://github.com/bitcratic/tokenbase">tokenbase repository</a>. If you would just like a simple way to access ticker symbols, take a look at our <a href="https://bitcratic.com/config/main.json" rel="nofollow">configuration JSON</a>.</p>
-        <p>We also supply a REST version of this data, but highly recommend using the websocket server for the most up to date information. The REST version can be found here: <a href="https://bitcratic.org/returnTicker" rel="nofollow">https://bitcratic.org/returnTicker</a></p>
+        <p>If you would like to get data on each ticker including names, please take a look at our <a href="https://github.com/dexdana/tokenbase">tokenbase repository</a>. If you would just like a simple way to access ticker symbols, take a look at our <a href="https://dexdana.com/config/main.json" rel="nofollow">configuration JSON</a>.</p>
+        <p>We also supply a REST version of this data, but highly recommend using the websocket server for the most up to date information. The REST version can be found here: <a href="https://api.forkdelta.app/returnTicker" rel="nofollow">https://api.forkdelta.app/returnTicker</a></p>
         <strong>Trades | myTrades</strong>
         <p>If <code>user</code> is passed in, <code>myTrades</code> will contain all trades available for the passed in user's address.
           If <code>user</code> is not passed in, <code>myTrades</code> will be absent.</p>
@@ -287,7 +285,7 @@ a.navbar-brand {
 ]
 </code></pre>
         <h4>2) Message ( order )</h4>
-        <p><code>message</code> allows you to post an order directly to Bitcratic and accepts one required parameter.</p>
+        <p><code>message</code> allows you to post an order directly to Dexdana and accepts one required parameter.</p>
         <p><code>order</code> must be a properly formatted JSON object containing the following properties:</p>
         <ul>
           <li><code>amountGive</code>: the amount you want to give (in wei or the base unit of the token)</li>
@@ -344,8 +342,8 @@ a.navbar-brand {
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contbox">
       <h1>API Client Libraries</h1>
       <div class="contentmain">
-         <p>Below is a (possibly incomplete) list of third-party libraries that can help you work with Bitcratic API:</p>
-        <p>These are third-party libraries; as such, Bitcratic has no control over them and offers no support for them. You should review their source code to make sure they are bug-free, safe, secure, and fit for your use.</p>
+         <p>Below is a (possibly incomplete) list of third-party libraries that can help you work with Dexdana API:</p>
+        <p>These are third-party libraries; as such, Dexdana has no control over them and offers no support for them. You should review their source code to make sure they are bug-free, safe, secure, and fit for your use.</p>
         <p>If you would like to add your library to this list, let us know by opening an issue.</p>
       </div>
     </div>
@@ -353,8 +351,8 @@ a.navbar-brand {
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contbox">
       <h1>More Information</h1>
       <div class="contentmain">
-         <p>Below is a (possibly incomplete) list of third-party libraries that can help you work with Bitcratic API:</p>
-          <p>For more information, or to see how this websocket server works, take a look at <a href="https://github.com/bitcratic/backend-replacement/blob/master/app/services/websocket_server.py">websocket_server.py</a></p>
+         <p>Below is a (possibly incomplete) list of third-party libraries that can help you work with Dexdana API:</p>
+          <p>For more information, or to see how this websocket server works, take a look at <a href="https://github.com/dexdana/backend-replacement/blob/master/app/services/websocket_server.py">websocket_server.py</a></p>
         <p>Special thanks to Zack for his original API and documentation: <a href="https://github.com/etherdelta/etherdelta.github.io/blob/master/docs/API.md">https://github.com/etherdelta/etherdelta.github.io/blob/master/docs/API.md</a></p>
       </div>
     </div>
@@ -392,6 +390,4 @@ a.navbar-brand {
   </div>
 </footer>
 </body>
-
-<!-- Mirrored from www.bitcratic.com/api.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Oct 2019 14:23:32 GMT -->
 </html>
