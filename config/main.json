@@ -20,6 +20,7 @@
   "gasOrder": 250000,
   "minOrderSize": 0.001,
   "apiServer": ["https://api.forkdelta.app","https://api.etherdelta.com"],
+  "socketServer": "https://socket.etherdelta.com",
   "userCookie": "EtherDelta",
   "eventsCacheCookie": "EtherDelta_eventsCache",
   "ordersCacheCookie": "EtherDelta_ordersCache",
