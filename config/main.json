@@ -4,7 +4,7 @@
   "contractReserveToken": "smart_contract/reservetoken.sol",
   "contractEtherDeltaAddrs": [
     { "addr": "0x8d12a197cb00d4747a1fe03395095ce2a5cc6819", "info": "Deployed 03/16/2019 -- THE CURRENT SMART CONTRACT" },
-	{ "addr": "0x232ba9f3b3643ab28d28ed7ee18600708d60e5fe", "info": "(Deployed 01/28/2019 - Deprecated)" }
+    { "addr": "0x232ba9f3b3643ab28d28ed7ee18600708d60e5fe", "info": "(Deployed 01/28/2019 - Deprecated)" }
    
   ],
   "ethTestnet": false,
@@ -19,7 +19,7 @@
   "gasTrade": 250000, 
   "gasOrder": 250000,
   "minOrderSize": 0.001,
-  "socketServer": ["https://api.forkdelta.app"],
+  "socketServer": ["https://api.forkdelta.com"],
   "userCookie": "EtherDelta",
   "eventsCacheCookie": "EtherDelta_eventsCache",
   "ordersCacheCookie": "EtherDelta_ordersCache",
